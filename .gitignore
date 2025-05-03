@@ -1,0 +1,9 @@
+# Ignorar entorno virtual
+analizadorLexicoPython/venv/
+
+# Ignorar cachés de Python
+**/__pycache__/
+**/*.pyc
+
+# Ignorar configuración de VS Code
+.vscode/
