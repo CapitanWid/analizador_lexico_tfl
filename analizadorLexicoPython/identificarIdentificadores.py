@@ -12,6 +12,5 @@ class IdentificarIdentificadores:
                 lexema += codigo_fuente[indice]
                 indice += 1
 
-            if len(lexema) <= 10:
-                return Token(lexema, Categoria.IDENTIFICADOR, indice)
+            return Token(lexema, Categoria.IDENTIFICADOR, indice)
         return None
