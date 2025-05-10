@@ -14,8 +14,14 @@ def analizar_lexico():
     tabla_tokens.delete(*tabla_tokens.get_children())
     for token in tokens:
         # Mejorar el formato de la posición para incluir la línea y la columna
-        line, col = calcular_posicion(codigo, token.indice_sgte)
-        tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, f"Línea {line}, Col {col}"))
+        #line, col = calcular_posicion(codigo, token.indice_sgte)
+        #tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, f"Línea {line}, Col {col}"))
+        line_ini, col_ini = calcular_posicion(codigo, token.indice_inicial)
+        line_fin, col_fin = calcular_posicion(codigo, token.indice_sgte - 1)
+        posicion = f"Línea {line_ini}, Col {col_ini} a Línea {line_fin}, Col {col_fin}"
+        tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, posicion))
+
+
 
 def calcular_posicion(codigo_fuente, indice):
     # Esta función calcula la línea y columna basadas en el índice

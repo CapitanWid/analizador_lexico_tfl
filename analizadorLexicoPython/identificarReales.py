@@ -13,5 +13,5 @@ class IdentificarReales:
                 if indice < len(codigo_fuente) and codigo_fuente[indice].isdigit():
                     while indice < len(codigo_fuente) and codigo_fuente[indice].isdigit():
                         indice += 1
-                    return Token(codigo_fuente[posicion:indice], Categoria.DECIMAL, indice)
+                    return Token(codigo_fuente[posicion:indice], Categoria.DECIMAL, posicion, indice)
         return None

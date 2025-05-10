@@ -61,7 +61,7 @@ class AnalizadorLexico:
 
     def extraer_no_reconocido(self, indice):
         lexema = self.codigo_fuente[indice]
-        return Token(lexema, Categoria.NO_RECONOCIDO, indice + 1)
+        return Token(lexema, Categoria.NO_RECONOCIDO,indice, indice + 1)
 
     def get_lista_tokens(self):
         return self.lista_tokens

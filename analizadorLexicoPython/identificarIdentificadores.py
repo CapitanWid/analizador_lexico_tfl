@@ -12,5 +12,5 @@ class IdentificarIdentificadores:
                 lexema += codigo_fuente[indice]
                 indice += 1
 
-            return Token(lexema, Categoria.IDENTIFICADOR, indice)
+            return Token(lexema, Categoria.IDENTIFICADOR,posicion, indice)
         return None
