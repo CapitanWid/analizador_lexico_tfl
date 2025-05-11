@@ -44,6 +44,11 @@ class AnalizadorLexico:
     def analizar(self):
         i = 0
         while i < len(self.codigo_fuente):
+                    # Ignorar espacios en blanco, tabs y saltos de línea
+            if self.codigo_fuente[i] in {' ', '\t', '\n', '\r'}:
+                i += 1
+                continue #para avanzar al siguiente caracter a analizar
+
             token = self.extraer_sgte_token(i)
             if token:
                 self.lista_tokens.append(token)

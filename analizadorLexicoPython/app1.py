@@ -13,13 +13,30 @@ def analizar_lexico():
     # Limpiar la tabla y mostrar los tokens encontrados
     tabla_tokens.delete(*tabla_tokens.get_children())
     for token in tokens:
-        # Mejorar el formato de la posición para incluir la línea y la columna
-        #line, col = calcular_posicion(codigo, token.indice_sgte)
-        #tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, f"Línea {line}, Col {col}"))
         line_ini, col_ini = calcular_posicion(codigo, token.indice_inicial)
         line_fin, col_fin = calcular_posicion(codigo, token.indice_sgte - 1)
-        posicion = f"Línea {line_ini}, Col {col_ini} a Línea {line_fin}, Col {col_fin}"
-        tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, posicion))
+
+        if line_ini == line_fin and col_ini == col_fin:
+            posicion = f"Línea {line_ini}, Col {col_ini}"
+        else:
+            posicion = f"Línea {line_ini}, Col {col_ini} a Línea {line_fin}, Col {col_fin}"
+
+        # Detectar si el token es de una categoría de error
+        es_error = token.categoria in {
+            Categoria.NO_RECONOCIDO,
+            Categoria.ERROR_CADENA_CARACTERES,
+            Categoria.ERROR_COMENTARIO_BLOQUE
+        }
+
+        # Insertar con color si es error
+        if es_error:
+            tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, posicion), tags=('error',))
+        else:
+            tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, posicion))
+
+    
+
+       #tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, posicion))
 
 
 
@@ -38,7 +55,7 @@ def calcular_posicion(codigo_fuente, indice):
 # Crear ventana
 root = Window(themename="flatly")
 root.title("Analizador Léxico")
-root.geometry("600x500")
+root.geometry("800x500")
 
 # Área de texto para el código fuente
 Label(root, text="Código fuente:").pack(anchor=W, padx=10, pady=(10, 0))
@@ -65,6 +82,7 @@ tabla_tokens.pack(side=LEFT, fill=BOTH, expand=True)
 
 scroll = Scrollbar(frame_tabla, orient=VERTICAL, command=tabla_tokens.yview)
 tabla_tokens.configure(yscrollcommand=scroll.set)
+tabla_tokens.tag_configure('error', background='#f8d7da')
 scroll.pack(side=RIGHT, fill=Y)
 
 # Iniciar bucle de la aplicación

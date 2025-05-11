@@ -7,5 +7,5 @@ class IdentificarOperadoresAsignacion:
     def extraer(codigo_fuente, indice):
         for op in sorted(IdentificarOperadoresAsignacion.OPERADORES, key=len, reverse=True):
             if codigo_fuente[indice:indice+len(op)] == op:
-                return Token(op, Categoria.OPERADOR_ASIGNACION, indice + len(op))
+                return Token(op, Categoria.OPERADOR_ASIGNACION,indice, indice + len(op))
         return None

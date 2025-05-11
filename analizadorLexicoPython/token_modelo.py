@@ -13,12 +13,16 @@ class Categoria(Enum):
     OPERADOR_RELACIONAL = 10
     OPERADOR_LOGICO = 11
     OPERADOR_INCREMENTO = 12
-    OPERADOR_ASIGNACION = 13  # categoría para operadores de asignación
+    OPERADOR_ASIGNACION = 13  
     TERMINAL = 14  # categoría para fin de sentencia (;)
     SEPARADOR = 15  # categoría para separadores (coma, etc.)
-    PARENTESIS = 16  # categoría para paréntesis
-    LLAVE = 17  # categoría para llaves
-    OPERADOR_COMPARACION = 18
+    PARENTESIS_APERTURA = 16  
+    PARENTESIS_CIERRE = 17  
+    LLAVE_APERTURA = 18  
+    LLAVE_CIERRE = 19  
+    OPERADOR_COMPARACION = 20
+    ERROR_CADENA_CARACTERES=21
+    ERROR_COMENTARIO_BLOQUE=22
 
 class Token:
     def __init__(self, palabra, categoria,indice_inicial, indice_sgte):

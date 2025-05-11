@@ -4,5 +4,5 @@ class IdentificarSeparador:
     @staticmethod
     def extraer(codigo_fuente, indice):
         if codigo_fuente[indice] == ",":
-            return Token(",", Categoria.SEPARADOR, indice + 1)
+            return Token(",", Categoria.SEPARADOR,indice, indice + 1)
         return None

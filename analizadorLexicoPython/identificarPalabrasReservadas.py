@@ -21,5 +21,5 @@ class IdentificarPalabrasReservadas:
             fin = indice + len(palabra)
             if codigo_fuente[indice:fin] == palabra:
                 if fin == len(codigo_fuente) or not codigo_fuente[fin].isalnum():
-                    return Token(palabra, Categoria.PALABRA_RESERVADA, fin)
+                    return Token(palabra, Categoria.PALABRA_RESERVADA,indice, fin)
         return None

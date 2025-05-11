@@ -3,27 +3,26 @@ from token_modelo import Token, Categoria
 class IdentificarComentarios:
     @staticmethod
     def extraer(codigo_fuente, indice):
-        # Detecta comentario de una línea
+        # Comentario de una línea
         if codigo_fuente[indice:indice+2] == "//":
             inicio = indice
             while indice < len(codigo_fuente) and codigo_fuente[indice] != '\n':
                 indice += 1
-            return Token(codigo_fuente[inicio:indice], Categoria.COMENTARIO_LINEA, indice)
+            return Token(codigo_fuente[inicio:indice], Categoria.COMENTARIO_LINEA, inicio, indice)
 
-        # Detecta comentario de bloque (varias líneas)
+        # Comentario de bloque
         elif codigo_fuente[indice:indice+2] == "/*":
             inicio = indice
-            indice += 2  # Avanzamos el índice después de "/*"
+            indice += 2
 
-            # Buscamos el cierre del comentario "*/"
             while indice < len(codigo_fuente) and codigo_fuente[indice:indice+2] != "*/":
                 indice += 1
 
-            if indice < len(codigo_fuente):  # Aseguramos que encontremos el cierre "*/"
-                indice += 2  # Avanzamos el índice después de "*/"
-                return Token(codigo_fuente[inicio:indice], Categoria.COMENTARIO_BLOQUE, indice)
+            if indice < len(codigo_fuente) - 1:
+                indice += 2  # consumimos el "*/"
+                return Token(codigo_fuente[inicio:indice], Categoria.COMENTARIO_BLOQUE, inicio, indice)
             else:
-                # Si no se encuentra el cierre, consideramos todo hasta el final como comentario de bloque
-                return Token(codigo_fuente[inicio:], Categoria.COMENTARIO_BLOQUE, len(codigo_fuente))
+                # No se encontró cierre de comentario
+                return Token(codigo_fuente[inicio:], Categoria.ERROR_COMENTARIO_BLOQUE, inicio, len(codigo_fuente))
 
         return None
