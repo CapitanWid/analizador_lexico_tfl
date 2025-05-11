@@ -28,11 +28,14 @@ def analizar_lexico():
             Categoria.ERROR_COMENTARIO_BLOQUE
         }
 
+        # Limpiar saltos de línea y tabulaciones para que no rompan la tabla
+        lexema_mostrado = token.palabra.replace('\n', ' ').replace('\r', '').replace('\t', ' ')
+
         # Insertar con color si es error
         if es_error:
-            tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, posicion), tags=('error',))
+            tabla_tokens.insert('', END, values=(lexema_mostrado, token.categoria.name, posicion), tags=('error',))
         else:
-            tabla_tokens.insert('', END, values=(token.palabra, token.categoria.name, posicion))
+            tabla_tokens.insert('', END, values=(lexema_mostrado, token.categoria.name, posicion))
 
     
 
