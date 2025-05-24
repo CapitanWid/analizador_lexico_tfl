@@ -10,11 +10,11 @@ from identificarOperadoresAsignacion import IdentificarOperadoresAsignacion
 from identificarIncrementoDecremento import IdentificarIncrementoDecremento
 from identificarParentesis import IdentificarParentesis
 from identificarLlaves import IdentificarLlaves
+from identificarCorchetes import IdentificarCorchetes
 from identificarTerminal import IdentificarTerminal
 from identificarSeparador import IdentificarSeparador
 from identificarCadenaCaracteres import IdentificarCadenaCaracteres
 from identificarComentarios import IdentificarComentarios
-
 from token_modelo import Categoria, Token
 
 class AnalizadorLexico:
@@ -28,15 +28,16 @@ class AnalizadorLexico:
             IdentificarEnteros,
             IdentificarPalabrasReservadas,
             IdentificarIdentificadores,
+            IdentificarOperadoresComparacion,
             IdentificarOperadoresAsignacion,
             IdentificarIncrementoDecremento,
-            IdentificarOperadoresComparacion,
             IdentificarOperadoresLogicos,
             IdentificarComentarios,
             IdentificarOperadoresAritmeticos,
             IdentificarCadenaCaracteres,
             IdentificarParentesis,
             IdentificarLlaves,
+            IdentificarCorchetes,
             IdentificarTerminal,
             IdentificarSeparador,
         ]

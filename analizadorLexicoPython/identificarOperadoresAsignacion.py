@@ -1,7 +1,7 @@
 from token_modelo import Token, Categoria
 
 class IdentificarOperadoresAsignacion:
-    OPERADORES = {"=", "+=", "-=", "*=", "/=", "%="}
+    OPERADORES = {"=", "+=", "-=", "*=", "/=", "%=", "&=", "^="}
 
     @staticmethod
     def extraer(codigo_fuente, indice):

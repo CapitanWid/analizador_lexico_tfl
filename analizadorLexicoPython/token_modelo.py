@@ -18,11 +18,14 @@ class Categoria(Enum):
     SEPARADOR = 15  # categoría para separadores (coma, etc.)
     PARENTESIS_APERTURA = 16  
     PARENTESIS_CIERRE = 17  
-    LLAVE_APERTURA = 18  
-    LLAVE_CIERRE = 19  
-    OPERADOR_COMPARACION = 20
-    ERROR_CADENA_CARACTERES=21
-    ERROR_COMENTARIO_BLOQUE=22
+    LLAVE_APERTURA = 18
+    LLAVE_CIERRE = 19
+    CORCHETE_APERTURA = 20
+    CORCHETE_CIERRE = 21
+    OPERADOR_COMPARACION = 22
+    ERROR_CADENA_CARACTERES=23
+    ERROR_COMENTARIO_BLOQUE=24
+
 
 class Token:
     def __init__(self, palabra, categoria,indice_inicial, indice_sgte):
