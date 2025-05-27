@@ -70,15 +70,13 @@ En VS Code, seleccione **File → Open Folder…** y apunte a la carpeta del pro
 Haga clic en los tres puntos (⋯) de la barra inferior y seleccione **New Terminal**.
 
 4. **Crear y activar el entorno virtual**
-
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\Activate.ps1
 
 5. **Instalar dependencias**
-
-```bash
-pip install ttkbootstrap
+   ```bash
+   pip install ttkbootstrap
 
 ---
 
