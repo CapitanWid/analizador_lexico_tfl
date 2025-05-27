@@ -83,8 +83,8 @@ Cada autómata consta de un diagrama de estados y una breve descripción funcion
 ## 5. Ejecución de la aplicación
 
 Con el entorno virtual activado:
-```bash
-python app1.py
+   ```bash
+   python app1.py
 
 1. **Se desplegará una ventana gráfica.**
 
@@ -97,34 +97,34 @@ python app1.py
 ---
 
 ## 6. Estructura del repositorio
-```bash
-analizador_lexico_tfl/
+   ```bash
+   analizador_lexico_tfl/
 
-│
-├── app1.py                  # Punto de entrada con interfaz gráfica
-├── automatas/               # Implementación de cada autómata
-│   ├── naturales.py
-│   ├── reales.py
-│   ├── identificadores.py
-│   ├── palabras_reservadas.py
-│   ├── operadores_aritmeticos.py
-│   └── ...
-├── utils/                   # Funciones auxiliares (lectura de archivo, logging, GUI helpers)
-├── tests/                   # Pruebas unitarias (pytest)
-│   ├── test_naturales.py
-│   ├── test_identificadores.py
-│   └── ...
-├── venv/                    # Entorno virtual (excluido del control de versiones)
-├── README.md                # Documentación del proyecto
-└── LICENSE                  # Licencia MIT
+   │
+   ├── app1.py                  # Punto de entrada con interfaz gráfica
+   ├── automatas/               # Implementación de cada autómata
+   │   ├── naturales.py
+   │   ├── reales.py
+   │   ├── identificadores.py
+   │   ├── palabras_reservadas.py
+   │   ├── operadores_aritmeticos.py
+   │   └── ...
+   ├── utils/                   # Funciones auxiliares (lectura de archivo, logging, GUI helpers)
+   ├── tests/                   # Pruebas unitarias (pytest)
+   │   ├── test_naturales.py
+   │   ├── test_identificadores.py
+   │   └── ...
+   ├── venv/                    # Entorno virtual (excluido del control de versiones)
+   ├── README.md                # Documentación del proyecto
+   └── LICENSE                  # Licencia MIT
 
 ---
 
 ## 7. Pruebas
 
 Se recomienda ejecutar todas las pruebas antes y después de realizar cambios significativos:
-```bash
-pytest tests/
+   ```bash
+   pytest tests/
 
 ---
 
@@ -135,8 +135,8 @@ Las contribuciones son bienvenidas. Para colaborar:
 1. **Fork del repositorio.**
 
 2. **Crear una rama con la nueva funcionalidad o corrección:**
-```bash
-git checkout -b feature/nueva-funcionalidad
+   ```bash
+   git checkout -b feature/nueva-funcionalidad
 
 3. **Realizar commits claros y descriptivos.**
 
