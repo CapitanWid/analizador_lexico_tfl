@@ -61,20 +61,92 @@ Cada autómata consta de un diagrama de estados y una breve descripción funcion
    git clone https://github.com/CapitanWid/analizador_lexico_tfl.git
    cd analizador_lexico_tfl
 
-## 2. Abrir en Visual Studio Code
+2. **Abrir en Visual Studio Code**
 
 En VS Code, seleccione **File → Open Folder…** y apunte a la carpeta del proyecto.
 
 ---
 
-## 3. Abrir terminal integrada
+3. **Abrir terminal integrada**
 
 Haga clic en los tres puntos (⋯) de la barra inferior y seleccione **New Terminal**.
 
 ---
 
-## 4. Crear y activar el entorno virtual
+4. **Crear y activar el entorno virtual**
 
 ```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
+
+5. **Instalar dependencias**
+
+```bash
+pip install ttkbootstrap
+
+## 5. Ejecución de la aplicación
+
+Con el entorno virtual activado:
+
+```bash
+python app1.py
+
+1. **Se desplegará una ventana gráfica.**
+
+2. **Cargar un archivo de código fuente (.txt, .py, etc.).**
+
+3. **Seleccionar el autómata que se desea probar.**
+
+4. **Observar la animación de estados conforme se reconoce cada token.**
+
+## 6. Estructura del repositorio
+
+```bash
+analizador_lexico_tfl/
+│
+├── app1.py                  # Punto de entrada con interfaz gráfica
+├── automatas/               # Implementación de cada autómata
+│   ├── naturales.py
+│   ├── reales.py
+│   ├── identificadores.py
+│   ├── palabras_reservadas.py
+│   ├── operadores_aritmeticos.py
+│   └── ...
+├── utils/                   # Funciones auxiliares (lectura de archivo, logging, GUI helpers)
+├── tests/                   # Pruebas unitarias (pytest)
+│   ├── test_naturales.py
+│   ├── test_identificadores.py
+│   └── ...
+├── venv/                    # Entorno virtual (excluido del control de versiones)
+├── README.md                # Documentación del proyecto
+└── LICENSE                  # Licencia MIT
+
+## 7. Pruebas
+
+Se recomienda ejecutar todas las pruebas antes y después de realizar cambios significativos:
+
+```bash
+
+pytest tests/
+
+## 8. Contribuciones
+
+Las contribuciones son bienvenidas. Para colaborar:
+
+1. **Fork del repositorio.**
+
+2. **Crear una rama con la nueva funcionalidad o corrección:**
+
+```bash
+
+git checkout -b feature/nueva-funcionalidad
+
+3. **Realizar commits claros y descriptivos.**
+
+4. **Abrir un Pull Request describiendo el cambio y su motivación.**
+
+## 9. Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulte el archivo LICENSE para más detalles.
+
+Desarrollado como proyecto final de la asignatura de Teoría de Lenguajes Formales, Universidad del Quindío.
