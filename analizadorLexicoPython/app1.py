@@ -33,7 +33,8 @@ def analizar_lexico():
 
         # Insertar con color si es error
         if es_error:
-            tabla_tokens.insert('', END, values=(lexema_mostrado, token.categoria.name, posicion), tags=('error',))
+            tabla_tokens.insert('', END,
+                                values=(lexema_mostrado, token.categoria.name, posicion), tags=('error',))
         else:
             tabla_tokens.insert('', END, values=(lexema_mostrado, token.categoria.name, posicion))
 

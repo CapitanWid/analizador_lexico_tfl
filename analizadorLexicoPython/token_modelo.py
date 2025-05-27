@@ -35,4 +35,5 @@ class Token:
         self.indice_sgte = indice_sgte
 
     def __repr__(self):
-        return f"Token(palabra={self.palabra}, categoria={self.categoria},indice_inicial={self.indice_inicial},indice_sgte={self.indice_sgte})"
+        return (f"Token(palabra={self.palabra}, categoria={self.categoria},"
+                f"indice_inicial={self.indice_inicial},indice_sgte={self.indice_sgte})")

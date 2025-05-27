@@ -9,7 +9,8 @@ class IdentificarIdentificadores:
             indice += 1
 
            # while indice < len(codigo_fuente) and (codigo_fuente[indice].isalnum() or codigo_fuente[indice] == '_'):
-            while indice < len(codigo_fuente) and len(lexema) < 10 and (codigo_fuente[indice].isalnum() or codigo_fuente[indice] == '_'):
+            while (indice < len(codigo_fuente) and len(lexema) < 10
+                   and (codigo_fuente[indice].isalnum() or codigo_fuente[indice] == '_')):
 
                 lexema += codigo_fuente[indice]
                 indice += 1
