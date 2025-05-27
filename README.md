@@ -63,11 +63,11 @@ Cada autómata consta de un diagrama de estados y una breve descripción funcion
 
 2. **Abrir en Visual Studio Code**
 
-En VS Code, seleccione **File → Open Folder…** y apunte a la carpeta del proyecto.
+   En VS Code, seleccione **File → Open Folder…** y apunte a la carpeta del proyecto.
 
 3. **Abrir terminal integrada**
 
-Haga clic en los tres puntos (⋯) de la barra inferior y seleccione **New Terminal**.
+   Haga clic en los tres puntos (⋯) de la barra inferior y seleccione **New Terminal**.
 
 4. **Crear y activar el entorno virtual**
    ```bash
@@ -83,7 +83,6 @@ Haga clic en los tres puntos (⋯) de la barra inferior y seleccione **New Termi
 ## 5. Ejecución de la aplicación
 
 Con el entorno virtual activado:
-
 ```bash
 python app1.py
 
@@ -98,9 +97,9 @@ python app1.py
 ---
 
 ## 6. Estructura del repositorio
-
 ```bash
 analizador_lexico_tfl/
+
 │
 ├── app1.py                  # Punto de entrada con interfaz gráfica
 ├── automatas/               # Implementación de cada autómata
@@ -124,9 +123,7 @@ analizador_lexico_tfl/
 ## 7. Pruebas
 
 Se recomienda ejecutar todas las pruebas antes y después de realizar cambios significativos:
-
 ```bash
-
 pytest tests/
 
 ---
@@ -138,9 +135,7 @@ Las contribuciones son bienvenidas. Para colaborar:
 1. **Fork del repositorio.**
 
 2. **Crear una rama con la nueva funcionalidad o corrección:**
-
 ```bash
-
 git checkout -b feature/nueva-funcionalidad
 
 3. **Realizar commits claros y descriptivos.**
