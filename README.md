@@ -65,13 +65,9 @@ Cada autómata consta de un diagrama de estados y una breve descripción funcion
 
 En VS Code, seleccione **File → Open Folder…** y apunte a la carpeta del proyecto.
 
----
-
 3. **Abrir terminal integrada**
 
 Haga clic en los tres puntos (⋯) de la barra inferior y seleccione **New Terminal**.
-
----
 
 4. **Crear y activar el entorno virtual**
 
@@ -83,6 +79,8 @@ python -m venv venv
 
 ```bash
 pip install ttkbootstrap
+
+---
 
 ## 5. Ejecución de la aplicación
 
@@ -98,6 +96,8 @@ python app1.py
 3. **Seleccionar el autómata que se desea probar.**
 
 4. **Observar la animación de estados conforme se reconoce cada token.**
+
+---
 
 ## 6. Estructura del repositorio
 
@@ -121,6 +121,8 @@ analizador_lexico_tfl/
 ├── README.md                # Documentación del proyecto
 └── LICENSE                  # Licencia MIT
 
+---
+
 ## 7. Pruebas
 
 Se recomienda ejecutar todas las pruebas antes y después de realizar cambios significativos:
@@ -128,6 +130,8 @@ Se recomienda ejecutar todas las pruebas antes y después de realizar cambios si
 ```bash
 
 pytest tests/
+
+---
 
 ## 8. Contribuciones
 
@@ -145,8 +149,12 @@ git checkout -b feature/nueva-funcionalidad
 
 4. **Abrir un Pull Request describiendo el cambio y su motivación.**
 
+---
+
 ## 9. Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulte el archivo LICENSE para más detalles.
 
 Desarrollado como proyecto final de la asignatura de Teoría de Lenguajes Formales, Universidad del Quindío.
+
+---
